@@ -1,0 +1,34 @@
+<%= link_to "Pdf to ipa Demo", root_path, :class => 'brand' %>
+<ul class="nav">
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to t(:logout), destroy_user_session_path, :method=>'delete' %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to t(:login), new_user_session_path %>
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'Edit account', edit_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Exec rake", "home/route_map" %>
+
+    </li>    
+    <% else %>
+    <li>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    </li>
+
+    <li>
+      <%= link_to "Admin", "admin" %>
+
+    </li>    
+    <li>
+      <%= link_to "Exec rake", "home/route_map" %>
+
+    </li>        
+  <% end %>
+</ul>

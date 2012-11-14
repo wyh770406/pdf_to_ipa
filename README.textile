@@ -1,0 +1,3 @@
+h1.  Rails App for Devise with CanCan and Twitter Bootstrap
+
+this is a rails3 + mysql basic template, you can evolve from the basis 

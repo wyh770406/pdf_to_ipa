@@ -1,0 +1,31 @@
+<h3>Home</h3>
+
+
+<div>
+  <%= simple_form_for(@pdf,:url =>  pdfs_path,:html => {:multipart => true}) do |f| %>
+
+    <%= render "/shared/error_messages", :target => @pdf %>
+
+    <div class="inputs">
+      <%= f.label :title,"title" %><br/>
+      <%= f.text_field :title %><br/>
+
+      <%= f.label :desc,"desc" %><br/>
+      <%=  f.text_area :desc, :style => "width: 400px; height: 200px" %><br/>
+
+
+      <%= f.label :pdf,"pdf" %><br/>
+      <%= f.file_field :pdf %>
+      
+      <%= f.hidden_field :pdf_cache %><br/>
+      
+
+      <%#= f.label :top_product,"所属产品类别(可以多选)" %><br/>
+      <%#= f.collection_select( :top_product_ids,@top_products,:id,:name , {:include_blank => false},{:multiple => true})%><br/>
+    </div>
+    <div class="actions">
+      <button type="submit">submit</button>
+
+    </div>
+  <% end %>	
+</div>
