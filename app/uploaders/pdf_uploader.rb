@@ -14,6 +14,8 @@ class PdfUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
+    @@uuid_str = UUID.new.generate
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -48,8 +50,13 @@ class PdfUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
+   def filename
+    
+    #uuid_str = uuid.generate
+    # puts @@uuid_str.to_s
+    # puts "++++++++++++++++++++++++++++++++++++++++++++++++"
+    "#{@@uuid_str.to_s}.pdf" if original_filename
   #   "something.jpg" if original_filename
-  # end
+   end
 
 end

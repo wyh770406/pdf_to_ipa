@@ -13,6 +13,14 @@
     <li>
       <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
+    <% if current_user
+    if current_user.has_role? :admin %>
+    <li>
+      <%= link_to "Admin", rails_admin_path %>
+
+    </li>    
+    <%end
+    end%>    
     <li>
       <%= link_to "Exec rake", :controller=>"home",:action=>"route_map" %>
 
@@ -21,11 +29,14 @@
     <li>
       <%= link_to 'Sign up', new_user_registration_path %>
     </li>
-
+    <% if current_user
+    if current_user.has_role? :admin %>
     <li>
       <%= link_to "Admin", rails_admin_path %>
 
     </li>    
+    <%end
+    end%>
     <li>
       <%= link_to "Exec rake", :controller=>"home",:action=>"route_map" %>
 

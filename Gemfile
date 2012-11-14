@@ -25,3 +25,4 @@ gem "bcrypt-ruby"
 gem 'carrierwave'
 gem "rails_admin" #後臺管理
 gem 'simple_form', "1.3.1"
+gem 'uuid'

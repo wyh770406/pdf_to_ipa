@@ -10,6 +10,7 @@ namespace :pdftoipa do
          apdf = pdf.pdf.url.split(".pdf")
 
          begin 
+          # FileUtils.cd(Rails.root.to_s+"/public"+apdf[0].gsub(replace_str,""))
            FileUtils.cp(Rails.root.to_s+"/public"+pdf.pdf.url,  Rails.root.to_s+"/public"+apdf[0]+".ipa")
            puts "ipa generate finished"
            puts "download file link: http://127.0.0.1:3000"+apdf[0]+".ipa"
