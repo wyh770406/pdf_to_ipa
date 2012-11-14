@@ -3,6 +3,10 @@ namespace :pdftoipa do
   puts 'ipa generating'
   task :generate => :environment do
          pdf = Pdf.where(:converted=>false).last
+         if pdf.nil? 
+          puts "no pdf to convert"
+          return
+         end
          apdf = pdf.pdf.url.split(".pdf")
 
          begin 

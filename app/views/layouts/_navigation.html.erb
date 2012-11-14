@@ -14,7 +14,7 @@
       <%= link_to 'Edit account', edit_user_registration_path %>
     </li>
     <li>
-      <%= link_to "Exec rake", "home/route_map" %>
+      <%= link_to "Exec rake", :controller=>"home",:action=>"route_map" %>
 
     </li>    
     <% else %>
@@ -23,11 +23,11 @@
     </li>
 
     <li>
-      <%= link_to "Admin", "admin" %>
+      <%= link_to "Admin", rails_admin_path %>
 
     </li>    
     <li>
-      <%= link_to "Exec rake", "home/route_map" %>
+      <%= link_to "Exec rake", :controller=>"home",:action=>"route_map" %>
 
     </li>        
   <% end %>
