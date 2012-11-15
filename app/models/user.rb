@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+    :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login], :email_regexp =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   # Setup accessible (or protected) attributes for your model

@@ -19,7 +19,7 @@ RailsAdmin.config do |config|
   config.main_app_name = ['Pdf to ipa', 'Admin']
   # or for a dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
-
+  config.authorize_with :cancan
 
   #  ==> Global show view settings
   # Display empty fields in show views

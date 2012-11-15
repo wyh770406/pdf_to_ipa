@@ -75,3 +75,4 @@ module Luna
     config.assets.version = '1.0'
   end
 end
+ENV_EMAIL_SETTING = YAML.load(ERB.new(File.new(File.join(Rails.root, 'config', 'email_setting.yml')).read).result)[Rails.env]
